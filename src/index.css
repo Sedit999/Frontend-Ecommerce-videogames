@@ -1,13 +1,272 @@
-body {
+*{
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*
+.try{
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  background: url(https://image.api.playstation.com/pr/bam-art/155/206/1ccd9cd0-7e13-4d49-8903-383003fcef6e.jpg?w=440&thumb=false) no-repeat center center/cover;
+}
+*/
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+    padding-bottom: 50px;
+    min-height: 100vh;
+    visibility: visible;
+    background-color: rgb(30, 30, 30);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/*Header*/
+a{
+  text-decoration: none;
+}
+
+#header {
+  display: flex;
+  width: 100%;
+  height: 8%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(30, 30, 30);
+  padding-top: 5px;
+}
+
+.margin {
+  height: fit-content;
+}
+
+p {
+  height: fit-content;
+}
+
+
+
+/*Hamburguesa*/
+.bars__menu {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.bars__menu span {
+  display: block;
+  width: 100%;
+  height:3px;
+  background: #fffffc;
+  margin-top: 6px;
+}
+
+/*Drawer*/
+:where(.css-dev-only-do-not-override-1km3mtt).ant-drawer .ant-drawer-content { background-color: rgb(30, 30, 30); }
+
+:where(.css-dev-only-do-not-override-1km3mtt).ant-drawer .ant-drawer-title {
+  color: white;
+}
+
+#drawer-opc1{
+  margin-bottom: 8px;
+}
+
+#drawer-opc2{
+  margin-top: 10px;
+}
+
+/*Menu*/
+li {
+  list-style: none;
+}
+
+#menu {
+  display: flex;
+  height: 6%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  background-color: rgb(30, 30, 30);
+}
+
+#menu-list {
+  display: flex;
+  background-color: rgb(12, 12, 12);
+  border-radius: 30px;
+  width: 90%;
+  height:80%;
+  padding: 5px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menu-opc {
+  background-color: rgb(12, 12, 12);
+  border-radius: 30px;
+  height: 90%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-opc1{
+  background-color: rgb(12, 12, 12);
+}
+#menu-opc2{
+  background-color: rgb(12, 12, 12);
+}
+#menu-opc3{
+  background-color: rgb(12, 12, 12);
+}
+
+.container1{
+  border-radius: 30px;
+  background-color: rgb(12, 12, 12);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.container2{
+  border-radius: 30px;
+  background-color: rgb(12, 12, 12);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.container3{
+  border-radius: 30px;
+  background-color: rgb(12, 12, 12);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/*WishList*/
+#wishList-content{
+  height: 90vh;
+  overflow: scroll;
+  padding: 10px 10px 0 10px;
+}
+
+
+
+/*Content*/
+::-webkit-scrollbar {display: none;}
+
+#main-contents-layout{
+  height: 85vh;
+  overflow: scroll;
+  padding: 10px 10px 0 10px;
+}
+
+/*Search*/
+#searchBox{
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
+#searchBar{
+  width: 85%;
+  border-radius: 30px;
+  background-color: rgb(51, 51, 51);
+  display: flex;
+}
+
+#searchBar input{
+  background-color: rgb(51, 51, 51);
+  border: none;
+  border-radius: 30px;
+  width: 100%;
+  padding-left: 10px;
+  color: rgb(116, 116, 116);
+  outline: none;
+}
+
+/*Library*/
+#library-content{
+  overflow: scroll;
+  height: 90vh;
+  padding: 10px 10px 0 10px;
+}
+
+/*Selecter*/
+#bot-menu{
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 20px;
+}
+
+#select{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+  border-top:1px solid rgb(32, 32, 32);
+  border-bottom: 1px solid rgb(32, 32, 32);
+  background-color: rgba(36, 36, 36, 0.849);
+  border-radius: 30px;
+}
+
+.select-opc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+ 
+}
+
+#search{
+  border: 1px solid red;
+  width: 150px;
+  height: 125%;
+  border-radius: 30px;
+  background-color: red;
+}
+
+svg{
+  height: 1.5em;
+  width: 1.5em;
+}
+
+#location{
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: rgb(41, 41, 41);
+}
+
+#location-txt{
+  height: fit-content;
+  background-color: rgb(41, 41, 41);
 }
