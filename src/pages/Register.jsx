@@ -3,12 +3,11 @@ import { UserContext } from "../context/UserContext";
 import { useNavigate, Link } from "react-router-dom";
 import FormInput from "../components/FormInput";
 
-function Login() {
+function Register() {
   const userCtx = useContext(UserContext);
-  const { loginUser, authStatus, verifyingToken, formData } = userCtx;
+  const { registerUser, authStatus, verifyingToken, formData } = userCtx;
 
   const navigate = useNavigate();
-
   useEffect(() => {
     if (authStatus) {
       verifyingToken();
@@ -20,16 +19,17 @@ function Login() {
 
   const sendData = (event) => {
     event.preventDefault();
-    loginUser(formData);
+    registerUser(formData);
   };
 
   return (
     <div id="container-login">
       <div id="header-login"></div>
       <div id="login">
-        <h1 id="login-title">Iniciar sesión</h1>
+        <h1 id="login-title">Crear cuenta</h1>
 
         <form id="login-form" onSubmit={(e) => sendData(e)}>
+          <FormInput typeD="username" />
           <FormInput typeD="email" />
           <FormInput typeD="password" />
           <button id="login-form-button" type="submit">
@@ -37,12 +37,12 @@ function Login() {
           </button>
         </form>
 
-        <Link to="/register" id="create-account">
-          Crear cuenta
+        <Link to="/login" id="create-account">
+          ¿Ya tienes una cuenta?
         </Link>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Register;

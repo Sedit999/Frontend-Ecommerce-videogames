@@ -27,6 +27,13 @@ function Menu() {
               </Link>
             </div>
           </li>
+          <li className="menu-opc">
+            <div className="container4">
+              <Link to="/library/">
+                <span id="menu-opc3">Tus juegos</span>
+              </Link>
+            </div>
+          </li>
         </ul>
       </div>
     </React.Fragment>

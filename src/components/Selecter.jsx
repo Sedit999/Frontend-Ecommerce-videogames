@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { UserContext } from "../context/UserContext";
 import { Drawer } from "antd";
 import {
   SearchOutlined,
   ShoppingCartOutlined,
-  UserOutlined,
+  HomeOutlined,
   HeartFilled,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
@@ -16,6 +17,8 @@ function Selecter() {
   const onClose = () => {
     setOpen(false);
   };
+  const userCtx = useContext(UserContext);
+  const { logout, log, user } = userCtx;
 
   return (
     <React.Fragment>
@@ -35,31 +38,31 @@ function Selecter() {
               </div>
             </Link>
           </div>
-          <div className="select-opc" id="search">
-            <Link to="/search/">
+          <div className="select-opc" id="home">
+            <Link to="/">
               <span className="select-option">
-                <SearchOutlined />
+                <HomeOutlined />
               </span>
             </Link>
           </div>
           <div className="select-opc">
-            <Link to="/cart/">
+            <Link to="/cart">
               <span className="select-option" id="cart">
                 <ShoppingCartOutlined />
               </span>
             </Link>
           </div>
           <div className="select-opc">
-            <Link to="/">
+            <Link to="/search/">
               <span className="select-option" id="cart">
-                <UserOutlined />
+                <SearchOutlined />
               </span>
             </Link>
           </div>
         </div>
       </div>
       <Drawer
-        title="Basic Drawer"
+        title={user.username !== null ? `Hola, ${user.username}` : "Opciones"}
         placement="top"
         closable={false}
         onClose={onClose}
@@ -67,12 +70,34 @@ function Selecter() {
         key="bottom"
       >
         <Link>
-          <p id="drawer-opc1">Métodos de pago</p>
+          <p id="drawer-opc1" className="drawer-opcs">
+            Métodos de pago
+          </p>
           <hr />
         </Link>
         <Link>
-          <p id="drawer-opc2">Historial de transacciones</p>
+          <p className="drawer-subs-opcs drawer-opcs">
+            Historial de transacciones
+          </p>
+          <hr />
         </Link>
+        {log ? (
+          <Link to="/">
+            <p
+              className="drawer-subs-opcs drawer-opcs"
+              onClick={() => logout() && onClose}
+            >
+              {" "}
+              Cerrar sesión{" "}
+            </p>
+            <hr />
+          </Link>
+        ) : (
+          <Link to="/login">
+            <p className="drawer-subs-opcs drawer-opcs"> Iniciar sesión </p>
+            <hr />
+          </Link>
+        )}
       </Drawer>
     </React.Fragment>
   );

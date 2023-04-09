@@ -6,15 +6,6 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/*
-.try{
-  margin: 20px;
-  width: 200px;
-  height: 200px;
-  background: url(https://image.api.playstation.com/pr/bam-art/155/206/1ccd9cd0-7e13-4d49-8903-383003fcef6e.jpg?w=440&thumb=false) no-repeat center center/cover;
-}
-*/
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -22,7 +13,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-    padding-bottom: 50px;
     min-height: 100vh;
     visibility: visible;
     background-color: rgb(30, 30, 30);
@@ -75,18 +65,27 @@ p {
 }
 
 /*Drawer*/
-:where(.css-dev-only-do-not-override-1km3mtt).ant-drawer .ant-drawer-content { background-color: rgb(30, 30, 30); }
+:where(.css-dev-only-do-not-override-mxhywb).ant-drawer .ant-drawer-content { background: rgb(30, 30, 30); }
 
-:where(.css-dev-only-do-not-override-1km3mtt).ant-drawer .ant-drawer-title {
-  color: white;
+:where(.css-dev-only-do-not-override-mxhywb).ant-drawer .ant-drawer-title {
+  color: rgb(230, 230, 230);
+}
+
+.drawer-opcs{
+color: rgb(230, 230, 230);
+}
+
+.drawer-opcs:hover{
+text-decoration: underline;
 }
 
 #drawer-opc1{
   margin-bottom: 8px;
 }
 
-#drawer-opc2{
+.drawer-subs-opcs{
   margin-top: 10px;
+  margin-bottom: 8px;
 }
 
 /*Menu*/
@@ -102,6 +101,7 @@ li {
   justify-content: center;
   margin-top: 20px;
   background-color: rgb(30, 30, 30);
+ 
 }
 
 #menu-list {
@@ -113,6 +113,7 @@ li {
   padding: 5px;
   align-items: center;
   justify-content: space-around;
+
 }
 
 .menu-opc {
@@ -245,7 +246,7 @@ li {
  
 }
 
-#search{
+#home{
   border: 1px solid red;
   width: 150px;
   height: 125%;
@@ -269,4 +270,199 @@ svg{
 #location-txt{
   height: fit-content;
   background-color: rgb(41, 41, 41);
+}
+
+/*CardGames*/
+#space-games-cards{
+ overflow: hidden;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-evenly;
+ padding-top: 10px;
+ padding-bottom: 120px;
+}
+
+.games-cards{
+  width: 150px;
+  padding-top: 2px;
+  margin-top: 5px;
+  background-color: rgb(12, 12, 12);
+  border-radius: 10px 10px 5px 5px;
+}
+
+.img-games-cards img{
+ border: 2px solid rgb(12, 12, 12);
+ border-radius: 10px;
+ width: 150px;
+ cursor: pointer;
+}
+
+.info-games-cards{
+  background-color: rgb(12, 12, 12);
+  font-size: 14px;
+  color: rgb(230, 230, 230);
+  padding-left: 4px;
+  padding-bottom: 2px;
+}
+
+/*Login*/
+#container-login{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login{
+  padding: 10px;
+  height: 50vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(230, 230, 230);
+}
+
+#login-title{
+  margin-bottom: 15px;
+  color: rgb(30, 30, 30);
+}
+
+#login-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 30vh;
+}
+
+.login-form-input{
+  border: 1px solid rgb(116, 116, 116);
+  outline: none;
+  padding: 10px;
+  color: black;
+  border-radius: 30px;
+}
+
+#login-form-button{
+  background-color: rgb(33, 33, 255);
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(230, 230, 230);
+  cursor: pointer;
+}
+
+#login-form-button:hover{
+  background-color: rgb(43, 43, 255);
+}
+
+#create-account{
+  color: rgb(12, 12, 12);
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+#create-account:hover{
+  color: rgb(33, 33, 255);
+}
+
+/*Game*/
+#game-main{
+  background-color: rgb(41, 41, 41);
+  border-radius: 20px 20px 0 0;
+  margin-top: 5px;
+}
+
+#game-img{
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+#game-main-info{
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+#game-buy{
+  background-color: rgb(41, 41, 41);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px rgb(12, 12, 12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100px;
+}
+
+.game-btn-buy{
+  width: 80%;
+  height: 30px;
+  color: black;
+  background: white;
+  border: none;
+  border-radius: 20px;
+}
+
+#game-text-info{
+  padding: 10px;
+  text-align: justify;
+}
+
+#game-other-info-conainer{
+  padding: 10px;
+}
+
+#game-other-info-content{
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#buy-container{
+  background-color: rgb(31, 31, 31);
+  min-height: 100vh;
+  padding: 15px;
+}
+
+#buy-costs{
+margin: 20px 0;
+
+}
+
+.buy-costs{
+  display: flex;
+  justify-content: space-between;
+}
+
+#buy-total{
+  font-weight: bold;
+}
+
+#buy-pay{
+  margin: 20px 0;
+}
+
+#buy-game-info{
+display: flex;
+margin: 20px 0;
+}
+
+#buy-game-img{
+  width: 150px;
+  height: 150px;
+}
+
+#buy-game{
+  margin-left: 20px;
+}
+
+@media (max-width: 789px){
+  #login{
+    width: 80%;
+  }
 }
