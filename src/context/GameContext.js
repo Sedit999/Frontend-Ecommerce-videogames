@@ -9,11 +9,11 @@ export const GameProvider = ({ children }) => {
     try {
       res = await clienteAxios.get(`/games/game/${id}`);
       localStorage.setItem("game", JSON.stringify(res.data.game));
+      return res.data.game;
     } catch (err) {
       console.log("bringGame falló");
       console.log(err);
     }
-    return res.data.game;
   };
 
   const data = {
