@@ -20,7 +20,7 @@ function Cart() {
       }
     };
     loadGame();
-  }, [bringGame, loaded]);
+  }, [bringGame, loaded, gameId]);
 
   return (
     <>

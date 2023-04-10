@@ -13,7 +13,7 @@ function Register() {
       verifyingToken();
       navigate("/");
     }
-  }, [authStatus]);
+  }, [authStatus, verifyingToken, navigate]);
 
   if (authStatus) return null;
 

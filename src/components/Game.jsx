@@ -49,7 +49,7 @@ function Game() {
       }
     };
     loadGame();
-  }, [bringGame, loaded]);
+  }, [bringGame, loaded, gameId]);
 
   return (
     <>
