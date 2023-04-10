@@ -23,7 +23,7 @@ function CartMenu() {
   function deletGame(idGame) {
     let cartList = JSON.parse(localStorage.getItem("cartList"));
     for (let i = 0; i <= cartList.length - 1; i++) {
-      if (cartList[i].id == idGame) {
+      if (cartList[i].id === idGame) {
         cartList.splice(i, 1);
       }
     }

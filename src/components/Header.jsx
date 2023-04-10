@@ -1,6 +1,6 @@
 import React from "react";
 
-function _Header() {
+function Header() {
   return (
     <React.Fragment>
       <header id="header">
@@ -16,4 +16,4 @@ function _Header() {
   );
 }
 
-export default _Header;
+export default Header;

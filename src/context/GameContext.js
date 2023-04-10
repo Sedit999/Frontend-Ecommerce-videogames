@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext } from "react";
 import clienteAxios from "../config/axios";
 export const GameContext = createContext();
 

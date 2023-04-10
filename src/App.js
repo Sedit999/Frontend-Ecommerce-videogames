@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
-import _Layout from "./components/Layout.jsx";
+import Layout from "./components/Layout.jsx";
 
 import Nuevos from "./components/Nuevos.jsx";
 import Proximos from "./components/Proximos.jsx";
@@ -26,7 +26,7 @@ import CartMenu from "./components/CartMenu.jsx";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<_Layout />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<Nuevos />} />
         <Route path="proximos" element={<Proximos />} />
         <Route path="ofertas" element={<Ofertas />} />
