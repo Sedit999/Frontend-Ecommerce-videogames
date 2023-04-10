@@ -85,7 +85,7 @@ function Selecter() {
           <Link to="/">
             <p
               className="drawer-subs-opcs drawer-opcs"
-              onClick={() => logout() && onClose}
+              onClick={() => logout() && onClose()}
             >
               {" "}
               Cerrar sesión{" "}
@@ -98,6 +98,17 @@ function Selecter() {
             <hr />
           </Link>
         )}
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <Link>
+          <p
+            onClick={() => logout() && onClose()}
+            className="drawer-subs-opcs drawer-opcs"
+          >
+            Forzar Cerrar Sesión
+          </p>
+        </Link>
       </Drawer>
     </React.Fragment>
   );

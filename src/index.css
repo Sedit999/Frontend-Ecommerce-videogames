@@ -31,15 +31,25 @@ a{
 #header {
   display: flex;
   width: 100%;
-  height: 8%;
-  justify-content: space-around;
+  height: 15vh;
+  justify-content: center;
   align-items: center;
   background-color: rgb(30, 30, 30);
   padding-top: 5px;
+
+}
+
+#header-img{
+  height: 100%;
+width: 50%;
 }
 
 .margin {
   height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 p {
@@ -309,8 +319,25 @@ svg{
 #container-login{
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#login-header{
+  background-color: rgb(33, 33, 255);
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#login-header-text{
+  padding: 5px;
+  cursor: pointer;
+
+}
+
+#login-header-text:hover{
+  text-decoration: underline;
 }
 
 #login{
@@ -405,6 +432,7 @@ svg{
   background: white;
   border: none;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 #game-text-info{
@@ -421,6 +449,23 @@ svg{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+/*Cart*/
+#cart-header{
+  background-color: rgb(33, 33, 255);
+  height: 5%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#cart-header-text{
+  cursor: pointer;
+}
+
+#cart-header-text:hover{
+  text-decoration: underline;
 }
 
 #buy-container{
@@ -462,6 +507,9 @@ margin: 20px 0;
 }
 
 @media (max-width: 789px){
+  #login-header{
+    width: 80%;
+  }
   #login{
     width: 80%;
   }

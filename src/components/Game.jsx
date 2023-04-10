@@ -5,15 +5,41 @@ import { GameContext } from "../context/GameContext";
 function Game() {
   const navigate = useNavigate();
   const gameCtx = useContext(GameContext);
-
   const { bringGame } = gameCtx;
   const { gameId } = useParams();
   const [loaded, setLoaded] = useState();
   const [game, setGame] = useState();
 
+  function addGame(gameToLS) {
+    let gameInCart = localStorage.getItem("cartList");
+    if (!gameInCart) {
+      localStorage.setItem("cartList", JSON.stringify([]));
+    }
+    let id = createId();
+    let gameAdded = JSON.parse(localStorage.getItem("cartList"));
+    gameAdded.push({
+      id,
+      gameToLS,
+    });
+    localStorage.setItem("cartList", JSON.stringify(gameAdded));
+  }
+
   const handleGame = async (gameId) => {
     navigate(`/cart/${gameId}`);
   };
+
+  function createId() {
+    const caracteres =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let resultado = "";
+    for (let i = 0; i < 5; i++) {
+      resultado += caracteres.charAt(
+        Math.floor(Math.random() * caracteres.length)
+      );
+    }
+    return resultado;
+  }
+
   useEffect(() => {
     const loadGame = async () => {
       if (!loaded) {
@@ -47,7 +73,7 @@ function Game() {
               <div className="game-btns">
                 <button
                   className="game-btn-buy"
-                  onClick={() => handleGame(game._id)}
+                  onClick={() => handleGame(game._id) && addGame(game)}
                 >
                   Agregar al carrito
                 </button>

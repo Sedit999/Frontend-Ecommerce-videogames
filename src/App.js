@@ -21,6 +21,7 @@ import PrivateRoutes from "./components/Auth/PrivateRoutes.jsx";
 
 import Game from "./components/Game.jsx";
 import Cart from "./pages/Cart.jsx";
+import CartMenu from "./components/CartMenu.jsx";
 
 function App() {
   return (
@@ -38,7 +39,8 @@ function App() {
         <Route path="/favorite/" element={<Favorites />}>
           <Route index element={<WishList />} />
         </Route>
-        <Route path="/cart/:gameId" element={<Cart />}></Route>
+        <Route path="/cart/:gameId" element={<Cart />} />
+        <Route path="/cart" element={<CartMenu />} />
       </Route>
 
       <Route path="/login" element={<Login />} />

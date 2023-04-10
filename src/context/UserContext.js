@@ -65,6 +65,7 @@ export const UserProvider = ({ children }) => {
     localStorage.removeItem("token");
     localStorage.removeItem("gameId");
     localStorage.removeItem("game");
+    localStorage.removeItem("cartList");
     alert("Sesisón cerrada con exito");
     setUser({ username: null, email: null });
     setAuthStatus(false);

@@ -4,6 +4,7 @@ import { GameContext } from "../context/GameContext";
 import PaypalBtn from "../components/PaypalBtn";
 
 function Cart() {
+  const navigate = useNavigate();
   const gameCtx = useContext(GameContext);
   const { bringGame } = gameCtx;
   const { gameId } = useParams();
@@ -16,7 +17,6 @@ function Cart() {
         const auxGames = await bringGame(gameId);
         setGame(auxGames[0]);
         setLoaded(true);
-        localStorage.setItem("cart", JSON.stringify(auxGames));
       }
     };
     loadGame();
@@ -26,6 +26,11 @@ function Cart() {
     <>
       {game && (
         <>
+          <div id="cart-header">
+            <div id="cart-header-text" onClick={() => navigate("/")}>
+              Home
+            </div>
+          </div>
           <div id="buy-container">
             <h2>Confirmar Compra</h2>
 

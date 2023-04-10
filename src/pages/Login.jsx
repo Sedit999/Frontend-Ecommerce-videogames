@@ -25,7 +25,12 @@ function Login() {
 
   return (
     <div id="container-login">
-      <div id="header-login"></div>
+      {" "}
+      <div id="login-header">
+        <div id="login-header-text" onClick={() => navigate("/")}>
+          Home
+        </div>
+      </div>
       <div id="login">
         <h1 id="login-title">Iniciar sesión</h1>
 
