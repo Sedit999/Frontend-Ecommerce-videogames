@@ -7,9 +7,10 @@ function CardGames() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [obtainedGames, setObtainedGames] = useState();
   const navigate = useNavigate();
+  const backend = "https://backend-ecommerce-videogames.onrender.com";
   const getGames = async () => {
     try {
-      const res = await clienteAxios.get("/games/get");
+      const res = await clienteAxios.get(`${backend}/games/get`);
       setIsLoaded(true);
       setObtainedGames(res.data.games);
     } catch (err) {
