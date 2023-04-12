@@ -3,6 +3,7 @@ import clienteAxios from "../config/axios";
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
+  const backend = "https://backend-ecommerce-videogames.onrender.com";
   const [user, setUser] = useState({ username: null, email: null });
   const [authStatus, setAuthStatus] = useState(false);
   const [log, setLog] = useState(false);
@@ -23,7 +24,7 @@ export const UserProvider = ({ children }) => {
 
   const registerUser = async (dataForm) => {
     try {
-      const res = await clienteAxios.post("/user/post", dataForm);
+      const res = await clienteAxios.post(`${backend}/user/post`, dataForm);
       localStorage.setItem("token", res.data.token);
       setAuthStatus(true);
       setLog(true);
@@ -41,7 +42,7 @@ export const UserProvider = ({ children }) => {
     }
 
     try {
-      const res = token && (await clienteAxios.post("user/verify"));
+      const res = token && (await clienteAxios.post(`${backend}/user/verify`));
       setUser({ username: res.data.user.username, email: res.data.user.email });
       setAuthStatus(true);
     } catch (err) {
@@ -51,7 +52,7 @@ export const UserProvider = ({ children }) => {
 
   const loginUser = async (dataForm) => {
     try {
-      const res = await clienteAxios.post("/user/login", dataForm);
+      const res = await clienteAxios.post(`${backend}/user/login`, dataForm);
       localStorage.setItem("token", res.data.token);
       setAuthStatus(true);
       setLog(true);
