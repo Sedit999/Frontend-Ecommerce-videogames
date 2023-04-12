@@ -32,23 +32,25 @@ function CardGames() {
     console.log(obtainedGames);
 
     return (
-      <React.Fragment>
-        <div id="space-games-cards">
-          {obtainedGames.map((e) => {
-            return (
-              <div className="games-cards" onClick={() => handleGame(e._id)}>
-                <div className="img-games-cards">
-                  <img src={e.img} alt="game-img" />
+      <>
+        {obtainedGames && (
+          <div id="space-games-cards">
+            {obtainedGames.map((e) => {
+              return (
+                <div className="games-cards" onClick={() => handleGame(e._id)}>
+                  <div className="img-games-cards">
+                    <img src={e.img} alt="game-img" />
+                  </div>
+                  <ul className="info-games-cards">
+                    <li>{e.name}</li>
+                    <li>{e.pricetxt}</li>
+                  </ul>
                 </div>
-                <ul className="info-games-cards">
-                  <li>{e.name}</li>
-                  <li>{e.pricetxt}</li>
-                </ul>
-              </div>
-            );
-          })}
-        </div>
-      </React.Fragment>
+              );
+            })}
+          </div>
+        )}
+      </>
     );
   }
 }
