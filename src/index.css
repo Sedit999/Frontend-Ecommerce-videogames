@@ -75,7 +75,7 @@ p {
 }
 
 /*Drawer*/
-:where(.css-dev-only-do-not-override-mxhywb).ant-drawer .ant-drawer-content { background: rgb(30, 30, 30); }
+:where(.css-mxhywb).ant-drawer .ant-drawer-body { background: rgb(30, 30, 30); }
 
 :where(.css-dev-only-do-not-override-mxhywb).ant-drawer .ant-drawer-title {
   color: rgb(230, 230, 230);
