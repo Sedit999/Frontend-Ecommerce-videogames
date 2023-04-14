@@ -56,53 +56,55 @@ function Game() {
       {game && (
         <>
           <div id="game-main-container">
-            <div id="game-main">
-              <div id="game-img-container">
-                <img id="game-img" src={game?.img} alt="game-img" />
-              </div>
-              <div id="game-main-info">
-                <div>
-                  <h1>{game?.name}</h1>
-                  <div>{game?.publisher}</div>
+            <div id="game-main-content">
+              <div id="game-main">
+                <div id="game-img-container">
+                  <img id="game-img" src={game?.img} alt="game-img" />
+                </div>
+                <div id="game-main-info">
+                  <div>
+                    <h1>{game?.name}</h1>
+                    <div>{game?.publisher}</div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div id="game-buy">
-              <p>{game?.pricetxt}</p>
-              <div className="game-btns">
-                <button
-                  className="game-btn-buy"
-                  onClick={() => handleGame(game._id) && addGame(game)}
-                >
-                  Agregar al carrito
-                </button>
+              <div id="game-buy">
+                <p>{game?.pricetxt}</p>
+                <div className="game-btns">
+                  <button
+                    className="game-btn-buy"
+                    onClick={() => handleGame(game._id) && addGame(game)}
+                  >
+                    Agregar al carrito
+                  </button>
+                </div>
               </div>
-            </div>
 
-            <hr />
-            <div id="game-text-info"> {game?.textoInfo}</div>
-            <hr />
-            <div id="game-other-info-conainer">
-              <div id="game-other-info-content">
-                <div>Calsificación: {game?.esrbrating}</div>
-                <ul id="game-info-genre">
-                  {" "}
-                  Género:
-                  {game?.genre.map((gameGenre) => {
-                    return <li>{gameGenre}</li>;
-                  })}
-                </ul>
-                <ul id="game-info-languajes">
-                  {" "}
-                  Idiomas:
-                  {game?.languajes.map((languaje) => {
-                    return <li>{languaje}</li>;
-                  })}
-                </ul>
-                <div>Número de jugadores: {game?.noplayer}</div>
+              <hr />
+              <div id="game-text-info"> {game?.textoInfo}</div>
+              <hr />
+              <div id="game-other-info-conainer">
+                <div id="game-other-info-content">
+                  <div>Calsificación: {game?.esrbrating}</div>
+                  <ul id="game-info-genre">
+                    {" "}
+                    Género:
+                    {game?.genre.map((gameGenre) => {
+                      return <li>{gameGenre}</li>;
+                    })}
+                  </ul>
+                  <ul id="game-info-languajes">
+                    {" "}
+                    Idiomas:
+                    {game?.languajes.map((languaje) => {
+                      return <li>{languaje}</li>;
+                    })}
+                  </ul>
+                  <div>Número de jugadores: {game?.noplayer}</div>
 
-                <div>Fecha de lanzamiento: {game?.releasedate}</div>
+                  <div>Fecha de lanzamiento: {game?.releasedate}</div>
+                </div>
               </div>
             </div>
           </div>

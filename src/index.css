@@ -397,14 +397,29 @@ svg{
 }
 
 /*Game*/
+#game-main-container{
+  display: flex;
+ justify-content: center;
+  
+}
+
+#game-main-content{
+  width: 50%;
+}
+
 #game-main{
   background-color: rgb(41, 41, 41);
   border-radius: 20px 20px 0 0;
   margin-top: 5px;
 }
 
+#game-img-container{
+  display: flex;
+  justify-content: center;
+}
+
 #game-img{
-  width: 100%;
+  width: 30%;
   border-radius: 20px 20px 0 0;
 }
 
@@ -512,5 +527,12 @@ margin: 20px 0;
   }
   #login{
     width: 80%;
+  }
+  #game-main-content{
+    width: 100%;
+  }
+  #game-img{
+    width: 100%;
+    border-radius: 20px 20px 0 0;
   }
 }
