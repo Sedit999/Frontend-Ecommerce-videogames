@@ -283,7 +283,14 @@ svg{
 }
 
 /*CardGames*/
+#bigBox-games-cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #space-games-cards{
+  width: 80%;
  overflow: hidden;
  display: flex;
  flex-wrap: wrap;
@@ -293,6 +300,7 @@ svg{
 }
 
 .games-cards{
+  margin: 30px;
   width: 150px;
   padding-top: 2px;
   margin-top: 5px;
@@ -534,5 +542,14 @@ margin: 20px 0;
   #game-img{
     width: 100%;
     border-radius: 20px 20px 0 0;
+  }
+  
+  #space-games-cards{
+    width: 100%;
+  }
+
+  .games-cards{
+    margin: 5px;
+
   }
 }
