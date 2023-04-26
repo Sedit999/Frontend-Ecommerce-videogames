@@ -22,9 +22,9 @@ function CardGames() {
     navigate(`/game/${gameId}`);
   };
   useEffect(() => {
-    setTimeout(() => {
-      getGames();
-    }, 1500);
+    
+    getGames();
+    
   }, []);
 
   if (error) {
